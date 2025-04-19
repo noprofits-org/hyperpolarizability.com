@@ -1,0 +1,25 @@
+# Hakyll
+_cache/
+_site/
+dist/
+dist-newstyle/
+.stack-work/
+cabal.sandbox.config
+.cabal-sandbox/
+result
+result-*/
+
+# System files
+.DS_Store
+.vscode/
+*.swp
+*.swo
+*~
+
+# Compiled files
+*.hi
+*.o
+*.dyn_hi
+*.dyn_o
+*.chi
+*.chs.h
