@@ -1,0 +1,56 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Haskell
+      uses: haskell/actions/setup@v2
+      with:
+        ghc-version: '9.4.8'
+        cabal-version: '3.8'
+    
+    - name: Cache Cabal dependencies
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.cabal/store
+          dist-newstyle
+        key: ${{ runner.os }}-cabal-${{ hashFiles('**/*.cabal', 'cabal.project') }}
+        restore-keys: |
+          ${{ runner.os }}-cabal-
+    
+    - name: Install dependencies
+      run: |
+        cabal update
+        cabal build --only-dependencies
+
+    - name: Build Hakyll site executable
+      run: cabal build
+
+    - name: Build site
+      run: |
+        cabal exec site rebuild
+        # Ensure _site directory exists
+        mkdir -p _site
+        # Create a .nojekyll file to disable Jekyll processing
+        touch _site/.nojekyll
+        # Create CNAME file if needed
+        echo "hyperpolarizability.com" > _site/CNAME
+
+    - name: Deploy to GitHub Pages
+      if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: _site # The folder the action should deploy
+        branch: gh-pages # The branch the action should deploy to
