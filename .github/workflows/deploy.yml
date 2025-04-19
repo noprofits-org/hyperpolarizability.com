@@ -62,8 +62,8 @@ jobs:
         # Create a .nojekyll file to disable Jekyll processing
         touch _site/.nojekyll
         
-        # Create CNAME file for custom domain
-        echo "hyperpolarizability.com" > _site/CNAME
+        # Create CNAME file for custom domain (ensure it has no trailing newline)
+        echo -n "hyperpolarizability.com" > _site/CNAME
     
     - name: Debug site output
       run: |
