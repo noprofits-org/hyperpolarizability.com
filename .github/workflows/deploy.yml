@@ -7,12 +7,20 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0 # Fetch all history for proper branch creation
     
     - name: Setup Haskell
       uses: haskell/actions/setup@v2
@@ -34,23 +42,78 @@ jobs:
       run: |
         cabal update
         cabal build --only-dependencies
+      continue-on-error: false
 
     - name: Build Hakyll site executable
-      run: cabal build
+      run: |
+        cabal build
+        # Debug info
+        echo "Listing executables:"
+        find dist-newstyle -type f -executable
+      continue-on-error: false
 
     - name: Build site
       run: |
-        cabal exec site rebuild
-        # Ensure _site directory exists
+        # Find the site executable
+        SITE_EXEC=$(find dist-newstyle -name site -type f -executable | head -n 1)
+        echo "Using site executable: $SITE_EXEC"
+        
+        # Build the site
+        if [ -x "$SITE_EXEC" ]; then
+          $SITE_EXEC rebuild || $SITE_EXEC build
+        else
+          cabal exec site rebuild || cabal exec site build
+        fi
+        
+        # Debug info
+        echo "Listing _site directory contents:"
+        ls -la _site || echo "_site directory not found"
+        
+        # Ensure _site directory exists and has content
         mkdir -p _site
+        
         # Create a .nojekyll file to disable Jekyll processing
         touch _site/.nojekyll
-        # Create CNAME file if needed
+        
+        # Create CNAME file for custom domain
         echo "hyperpolarizability.com" > _site/CNAME
+        
+        # Ensure at least one file exists to prevent empty deployment
+        echo "# Placeholder" > _site/index.html.new
+        if [ ! -f _site/index.html ]; then
+          mv _site/index.html.new _site/index.html
+        else
+          rm _site/index.html.new
+        fi
+      continue-on-error: false
+
+    - name: Debug output
+      run: |
+        echo "Current directory structure:"
+        ls -la
+        echo "Content of _site directory:"
+        ls -la _site || echo "_site directory does not exist"
+        echo "Git status:"
+        git status
+
+    - name: Configure Git
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        git config --global init.defaultBranch gh-pages
+
+    # Use official GitHub Pages deployment action
+    - name: Setup Pages
+      if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+      uses: actions/configure-pages@v3
+
+    - name: Upload artifact
+      if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+      uses: actions/upload-pages-artifact@v2
+      with:
+        path: '_site'
 
     - name: Deploy to GitHub Pages
       if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        folder: _site # The folder the action should deploy
-        branch: gh-pages # The branch the action should deploy to
+      id: deployment
+      uses: actions/deploy-pages@v2
