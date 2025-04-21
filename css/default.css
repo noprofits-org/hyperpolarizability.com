@@ -17,24 +17,28 @@
   --bg-secondary: #f3f6f8;
   --text-primary: #2d3748;
   --text-secondary: #4a5568;
-  --accent-primary: #0d9488; /* Teal 600 */
-  --accent-secondary: #f59e0b; /* Amber 500 */
-  --accent-hover: #0f766e; /* Teal 700 */
+  --accent-primary: #0d9488;
+  /* Teal 600 */
+  --accent-secondary: #f59e0b;
+  /* Amber 500 */
+  --accent-hover: #0f766e;
+  /* Teal 700 */
   --border-color: #e2e8f0;
   --code-bg: #f8fafc;
   --code-text: #1e293b;
-  --table-header: #e6f7f5; /* Light teal */
+  --table-header: #e6f7f5;
+  /* Light teal */
   --table-odd-row: #ffffff;
   --table-even-row: #f8fafc;
   --table-hover: rgba(13, 148, 136, 0.1);
   --shadow-color: rgba(0, 0, 0, 0.1);
   --selection-bg: rgba(13, 148, 136, 0.25);
-  
+
   /* Typography */
   --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --font-serif: Georgia, 'Times New Roman', Times, serif;
   --font-mono: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
-  
+
   /* Spacing */
   --content-width: 820px;
   --spacing-xs: 0.25rem;
@@ -42,12 +46,12 @@
   --spacing-md: 1rem;
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
-  
+
   /* Animations */
   --transition-fast: 150ms ease;
   --transition-medium: 250ms ease;
   --transition-slow: 350ms ease;
-  
+
   /* Border radius */
   --radius-sm: 4px;
   --radius-md: 6px;
@@ -67,7 +71,8 @@
 }
 
 html {
-  font-size: 62.5%; /* Base 10px */
+  font-size: 62.5%;
+  /* Base 10px */
   scroll-behavior: smooth;
 }
 
@@ -82,8 +87,8 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  transition: background-color var(--transition-medium), 
-              color var(--transition-medium);
+  transition: background-color var(--transition-medium),
+    color var(--transition-medium);
 }
 
 /* Layout Containers */
@@ -99,7 +104,12 @@ main {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-sans);
   margin: var(--spacing-lg) 0 var(--spacing-md);
   line-height: 1.3;
@@ -126,11 +136,14 @@ h4 {
   font-size: 1.8rem;
 }
 
-p, ul, ol {
+p,
+ul,
+ol {
   margin-bottom: var(--spacing-md);
 }
 
-ul, ol {
+ul,
+ol {
   margin-left: var(--spacing-lg);
 }
 
@@ -158,7 +171,7 @@ header {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   transition: background-color var(--transition-medium),
-              border-color var(--transition-medium);
+    border-color var(--transition-medium);
 }
 
 .header-content {
@@ -233,7 +246,7 @@ footer {
   padding: var(--spacing-lg) 0;
   margin-top: var(--spacing-xl);
   transition: background-color var(--transition-medium),
-              border-color var(--transition-medium);
+    border-color var(--transition-medium);
   /* Position will be set in media queries */
 }
 
@@ -261,7 +274,8 @@ article .header {
 }
 
 /* Code Blocks */
-pre, code {
+pre,
+code {
   font-family: var(--font-mono);
   border-radius: var(--radius-md);
 }
@@ -293,24 +307,82 @@ pre code {
 }
 
 /* Syntax highlighting for code blocks */
-.sourceCode .kw { color: #569CD6; } /* Keyword - VS Code blue */
-.sourceCode .dt { color: #4EC9B0; } /* DataType - VS Code teal */
-.sourceCode .co { color: #6A9955; } /* Comment - VS Code green */
-.sourceCode .st { color: #CE9178; } /* String - VS Code brown/orange */
-.sourceCode .ch { color: #CE9178; } /* Char */
-.sourceCode .fu { color: #DCDCAA; } /* Function - VS Code yellow */
-.sourceCode .bn { color: #B5CEA8; } /* BaseN */
-.sourceCode .op { color: #D4D4D4; } /* Operator */
-.sourceCode .va { color: #9CDCFE; } /* Variable */
-.sourceCode .cf { color: #C586C0; } /* ControlFlow - purple */
-.sourceCode .im { color: #9CDCFE; } /* Import */
+.sourceCode .kw {
+  color: #569CD6;
+}
+
+/* Keyword - VS Code blue */
+.sourceCode .dt {
+  color: #4EC9B0;
+}
+
+/* DataType - VS Code teal */
+.sourceCode .co {
+  color: #6A9955;
+}
+
+/* Comment - VS Code green */
+.sourceCode .st {
+  color: #CE9178;
+}
+
+/* String - VS Code brown/orange */
+.sourceCode .ch {
+  color: #CE9178;
+}
+
+/* Char */
+.sourceCode .fu {
+  color: #DCDCAA;
+}
+
+/* Function - VS Code yellow */
+.sourceCode .bn {
+  color: #B5CEA8;
+}
+
+/* BaseN */
+.sourceCode .op {
+  color: #D4D4D4;
+}
+
+/* Operator */
+.sourceCode .va {
+  color: #9CDCFE;
+}
+
+/* Variable */
+.sourceCode .cf {
+  color: #C586C0;
+}
+
+/* ControlFlow - purple */
+.sourceCode .im {
+  color: #9CDCFE;
+}
+
+/* Import */
 
 /* Language-specific highlighting */
-.language-javascript .kw { color: #569CD6; }
-.language-python .kw { color: #569CD6; }
-.language-bash .kw { color: #569CD6; }
-.language-html .kw { color: #569CD6; }
-.language-css .kw { color: #569CD6; }
+.language-javascript .kw {
+  color: #569CD6;
+}
+
+.language-python .kw {
+  color: #569CD6;
+}
+
+.language-bash .kw {
+  color: #569CD6;
+}
+
+.language-html .kw {
+  color: #569CD6;
+}
+
+.language-css .kw {
+  color: #569CD6;
+}
 
 .copy-button {
   position: absolute;
@@ -324,8 +396,8 @@ pre code {
   font-size: 1.2rem;
   cursor: pointer;
   opacity: 0;
-  transition: opacity var(--transition-fast), 
-              background-color var(--transition-fast);
+  transition: opacity var(--transition-fast),
+    background-color var(--transition-fast);
 }
 
 pre:hover .copy-button {
@@ -440,6 +512,23 @@ blockquote p:last-child {
   max-width: 100%;
 }
 
+/* Hero Equation */
+.hero {
+  margin: var(--spacing-xl) 0;
+  text-align: center;
+}
+
+.hero-equation {
+  font-size: 2.5rem;
+  margin: var(--spacing-lg) 0;
+  color: var(--accent-primary);
+}
+
+/* Increase MathJax size for hero equation only */
+.hero-equation .MathJax {
+  font-size: 180% !important;
+}
+
 /* Print Button */
 .print-button {
   display: inline-flex;
@@ -477,22 +566,26 @@ blockquote p:last-child {
   body {
     font-size: 1.7rem;
   }
-  
+
   main {
     padding: var(--spacing-xl) 0;
   }
-  
+
   .container {
-    width: 87.5%; /* Increased width to reduce right margin by 25% */
-    margin-right: auto; /* Push container to the left */
-    margin-left: 5%; /* Left margin reduced by ~30% compared to auto centering */
-    padding: 0 var(--spacing-xl); /* Keep existing padding */
+    width: 87.5%;
+    /* Increased width to reduce right margin by 25% */
+    margin-right: auto;
+    /* Push container to the left */
+    margin-left: 5%;
+    /* Left margin reduced by ~30% compared to auto centering */
+    padding: 0 var(--spacing-xl);
+    /* Keep existing padding */
   }
-  
+
   header {
     padding: var(--spacing-md) 0;
   }
-  
+
   /* Desktop footer - sticky */
   footer {
     position: sticky;
@@ -501,60 +594,65 @@ blockquote p:last-child {
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
   }
-  
+
   .header-content {
     padding: 0 var(--spacing-xl);
   }
-  
+
   .logo a {
     font-size: 2.2rem;
   }
-  
+
   nav {
     gap: var(--spacing-lg);
   }
-  
+
   nav a {
     padding: var(--spacing-xs) var(--spacing-sm);
   }
-  
+
   /* Desktop Hero */
   .hero {
     margin: var(--spacing-xl) 0;
     text-align: center;
   }
-  
+
   .hero h1 {
     font-size: 4rem;
   }
-  
+
   .hero p {
     font-size: 1.8rem;
     margin: var(--spacing-md) auto;
     max-width: 80%;
   }
-  
+
+  .hero-equation {
+    font-size: 1.8rem;
+    opacity: 0.9;
+  }
+
   /* Desktop Layout for post lists */
   .post-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: var(--spacing-lg);
   }
-  
+
   .post-item {
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
     padding: var(--spacing-lg);
     background-color: var(--bg-primary);
-    transition: transform var(--transition-medium), 
-                box-shadow var(--transition-medium);
+    transition: transform var(--transition-medium),
+      box-shadow var(--transition-medium);
   }
-  
+
   .post-item:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px var(--shadow-color);
   }
-  
+
   /* Desktop Table */
   table {
     display: table;
@@ -562,7 +660,7 @@ blockquote p:last-child {
     overflow-x: visible;
     white-space: normal;
   }
-  
+
   /* Desktop Images */
   figure img {
     max-width: 85%;
@@ -575,46 +673,65 @@ blockquote p:last-child {
   body {
     font-size: 1.6rem;
   }
-  
+
   main {
     padding: var(--spacing-lg) 0;
   }
-  
+
   .container {
     padding: 0 var(--spacing-md);
   }
-  
+
   header {
     padding: var(--spacing-sm) 0;
   }
-  
+
   .header-content {
     flex-direction: column;
     gap: var(--spacing-md);
     text-align: center;
     padding: var(--spacing-sm) var(--spacing-md);
   }
-  
+
   .logo a {
     font-size: 2rem;
   }
-  
+
   nav {
     justify-content: center;
     width: 100%;
     flex-wrap: wrap;
     gap: var(--spacing-sm);
   }
-  
+
   nav a {
     padding: var(--spacing-xs) var(--spacing-sm);
   }
-  
+
   /* Mobile Typography */
-  h1 { font-size: 2.6rem; }
-  h2 { font-size: 2.2rem; }
-  h3 { font-size: 1.8rem; }
+  h1 {
+    font-size: 2.6rem;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+  }
   
+  /* Mobile Hero Equation */
+  .hero-equation {
+    font-size: 1.8rem;
+    margin: var(--spacing-md) 0;
+    overflow-x: auto;
+  }
+  
+  .hero-equation .MathJax {
+    font-size: 140% !important;
+  }
+
   /* Mobile Table */
   table {
     display: block;
@@ -623,41 +740,42 @@ blockquote p:last-child {
     scrollbar-width: thin;
     scrollbar-color: var(--accent-primary) var(--bg-secondary);
   }
-  
+
   table::-webkit-scrollbar {
     height: 6px;
   }
-  
+
   table::-webkit-scrollbar-track {
     background: var(--bg-secondary);
     border-radius: 3px;
   }
-  
+
   table::-webkit-scrollbar-thumb {
     background-color: var(--accent-primary);
     border-radius: 3px;
   }
-  
+
   /* Mobile Footer */
   footer {
-    position: static; /* Non-sticky footer for mobile */
+    position: static;
+    /* Non-sticky footer for mobile */
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
   }
-  
+
   .footer-content {
     flex-direction: column;
     gap: var(--spacing-md);
     text-align: center;
   }
-  
+
   /* Mobile Post Items */
   .post-list {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
   }
-  
+
   .post-item {
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
@@ -668,13 +786,17 @@ blockquote p:last-child {
 
 /* ================= 4. PRINT STYLES ================= */
 @media print {
+
   /* Basic page setup for letter size paper */
   @page {
-    size: letter; /* 8.5in x 11in - standard US letter size */
-    margin: 0.75in !important; /* Standard margins for academic papers */
+    size: letter;
+    /* 8.5in x 11in - standard US letter size */
+    margin: 0.75in !important;
+    /* Standard margins for academic papers */
   }
-  
-  html, body {
+
+  html,
+  body {
     background-color: white !important;
     color: black !important;
     font-family: var(--font-serif) !important;
@@ -685,24 +807,30 @@ blockquote p:last-child {
     width: 100% !important;
     max-width: 100% !important;
   }
-  
+
   /* Layout improvements - full width */
-  .container, main {
+  .container,
+  main {
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
   }
-  
+
   article {
     width: 100% !important;
     max-width: 100% !important;
     padding: 0 !important;
     margin: 0 !important;
   }
-  
+
   /* Typography for academic style */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: black !important;
     font-family: var(--font-serif) !important;
     page-break-after: avoid !important;
@@ -712,24 +840,37 @@ blockquote p:last-child {
     font-weight: bold !important;
     width: 100% !important;
   }
-  
-  h1 { font-size: 18pt !important; }
-  h2 { font-size: 16pt !important; }
-  h3 { font-size: 14pt !important; }
-  
-  p, li {
+
+  h1 {
+    font-size: 18pt !important;
+  }
+
+  h2 {
+    font-size: 16pt !important;
+  }
+
+  h3 {
+    font-size: 14pt !important;
+  }
+
+  p,
+  li {
     color: black !important;
     orphans: 3 !important;
     widows: 3 !important;
     font-size: 11pt !important;
     width: 100% !important;
   }
-  
+
   /* Hide non-essential elements */
-  header, footer, nav, .copy-button, .print-button {
+  header,
+  footer,
+  nav,
+  .copy-button,
+  .print-button {
     display: none !important;
   }
-  
+
   /* Links - show URLs */
   a {
     color: black !important;
@@ -737,18 +878,20 @@ blockquote p:last-child {
     word-wrap: break-word !important;
     border-bottom: none !important;
   }
-  
+
   a[href^="http"]:after {
     content: " (" attr(href) ")";
     font-size: 90%;
     color: #333 !important;
   }
-  
+
   /* Enhanced code blocks for print - NO BORDERS */
   pre {
     background: white !important;
-    border: none !important; /* Removed border */
-    padding: 12px 0 !important; /* Adjusted padding */
+    border: none !important;
+    /* Removed border */
+    padding: 12px 0 !important;
+    /* Adjusted padding */
     margin: 1.5em 0 !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
@@ -761,16 +904,17 @@ blockquote p:last-child {
     width: 100% !important;
     max-width: 100% !important;
   }
-  
+
   code {
     font-family: "Courier New", Courier, monospace !important;
     font-size: 9pt !important;
     color: black !important;
     background: white !important;
     padding: 1px 0 !important;
-    border: none !important; /* Removed border */
+    border: none !important;
+    /* Removed border */
   }
-  
+
   pre code {
     padding: 0 !important;
     border: none !important;
@@ -779,22 +923,22 @@ blockquote p:last-child {
     line-height: 1.4 !important;
     width: 100% !important;
   }
-  
+
   /* Reset all syntax highlighting colors for print */
-  .sourceCode .kw, 
-  .sourceCode .dt, 
-  .sourceCode .co, 
-  .sourceCode .st, 
-  .sourceCode .ch, 
-  .sourceCode .fu, 
-  .sourceCode .bn, 
+  .sourceCode .kw,
+  .sourceCode .dt,
+  .sourceCode .co,
+  .sourceCode .st,
+  .sourceCode .ch,
+  .sourceCode .fu,
+  .sourceCode .bn,
   .sourceCode .op,
   .sourceCode .va,
   .sourceCode .cf,
   .sourceCode .im {
     color: black !important;
   }
-  
+
   /* Enhanced tables for print - NO OUTER BORDERS */
   table {
     display: table !important;
@@ -805,30 +949,33 @@ blockquote p:last-child {
     page-break-inside: avoid !important;
     break-inside: avoid !important;
     font-size: 10pt !important;
-    border: none !important; /* Removed border */
+    border: none !important;
+    /* Removed border */
   }
-  
+
   thead {
     display: table-header-group !important;
   }
-  
+
   tbody {
     display: table-row-group !important;
   }
-  
+
   tr {
     page-break-inside: avoid !important;
     break-inside: avoid !important;
-    border: none !important; /* Removed border */
+    border: none !important;
+    /* Removed border */
     width: 100% !important;
   }
-  
+
   th {
     background-color: white !important;
     color: black !important;
     font-weight: bold !important;
     text-align: left !important;
-    border-bottom: 2px solid #000 !important; /* Keep horizontal lines */
+    border-bottom: 2px solid #000 !important;
+    /* Keep horizontal lines */
     border-top: none !important;
     border-right: none !important;
     border-left: none !important;
@@ -836,9 +983,10 @@ blockquote p:last-child {
     vertical-align: bottom !important;
     width: auto !important;
   }
-  
+
   td {
-    border-bottom: 0.5px solid #777 !important; /* Keep horizontal lines */
+    border-bottom: 0.5px solid #777 !important;
+    /* Keep horizontal lines */
     border-top: none !important;
     border-right: none !important;
     border-left: none !important;
@@ -846,16 +994,17 @@ blockquote p:last-child {
     vertical-align: top !important;
     width: auto !important;
   }
-  
-  tr:nth-child(even), tr:nth-child(odd) {
+
+  tr:nth-child(even),
+  tr:nth-child(odd) {
     background-color: white !important;
   }
-  
+
   /* Remove alternate row shading */
   tr:nth-child(even) {
     background-color: white !important;
   }
-  
+
   /* Images */
   img {
     max-width: 100% !important;
@@ -865,7 +1014,7 @@ blockquote p:last-child {
     display: block !important;
     margin: 1.5em auto !important;
   }
-  
+
   figure {
     page-break-inside: avoid !important;
     break-inside: avoid !important;
@@ -873,7 +1022,7 @@ blockquote p:last-child {
     text-align: center !important;
     width: 100% !important;
   }
-  
+
   figcaption {
     font-style: italic !important;
     text-align: center !important;
@@ -882,21 +1031,21 @@ blockquote p:last-child {
     font-size: 10pt !important;
     width: 100% !important;
   }
-  
+
   /* Citations */
   .citation {
     vertical-align: super !important;
     font-size: 0.8em !important;
     color: black !important;
   }
-  
+
   .references {
     border-top: 1px solid #000 !important;
     margin-top: 2em !important;
     padding-top: 1em !important;
     width: 100% !important;
   }
-  
+
   .csl-entry {
     margin-bottom: 0.5em !important;
     color: black !important;
@@ -905,16 +1054,16 @@ blockquote p:last-child {
     margin-left: 2em !important;
     width: 100% !important;
   }
-  
+
   .csl-left-margin {
     color: black !important;
     font-weight: normal !important;
   }
-  
+
   .csl-right-inline {
     display: inline !important;
   }
-  
+
   /* Better spacing */
   article .header {
     margin-bottom: 2em !important;
@@ -922,13 +1071,13 @@ blockquote p:last-child {
     padding-bottom: 0.5em !important;
     width: 100% !important;
   }
-  
+
   section {
     margin-bottom: 1em !important;
     width: 100% !important;
     max-width: 100% !important;
   }
-  
+
   /* Add page numbers */
   @page {
     @bottom-center {
@@ -937,7 +1086,7 @@ blockquote p:last-child {
       font-size: 10pt !important;
     }
   }
-  
+
   /* Add article title as header */
   @page {
     @top-center {
@@ -947,13 +1096,18 @@ blockquote p:last-child {
       font-style: italic !important;
     }
   }
-  
+
   h1 {
     position: running(running-header) !important;
   }
-  
+
   /* Ensure container elements don't restrict width */
-  .container, .header-content, .footer-content, main, article, section {
+  .container,
+  .header-content,
+  .footer-content,
+  main,
+  article,
+  section {
     min-width: 100% !important;
     max-width: 100% !important;
     width: 100% !important;
@@ -961,7 +1115,7 @@ blockquote p:last-child {
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
-  
+
   /* Override any max-width constraints */
   * {
     max-width: none !important;
@@ -988,7 +1142,7 @@ blockquote p:last-child {
   .logo a:hover {
     color: var(--accent-secondary);
   }
-  
+
   pre {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
@@ -998,52 +1152,110 @@ blockquote p:last-child {
     color: #f0f0f0;
     border-color: #3e4451;
   }
-  
+
   /* Syntax highlighting for dark mode - One Dark Pro inspired theme */
-  .sourceCode .kw { color: #c586c0; } /* Keyword - purple */
-  .sourceCode .dt { color: #4ec9b0; } /* DataType - teal */
-  .sourceCode .co { color: #6a9955; } /* Comment - green */
-  .sourceCode .st { color: #ce9178; } /* String - orange */
-  .sourceCode .ch { color: #ce9178; } /* Char - orange */
-  .sourceCode .fu { color: #dcdcaa; } /* Function - yellow */
-  .sourceCode .bn { color: #b5cea8; } /* BaseN - light green */
-  .sourceCode .op { color: #d4d4d4; } /* Operator - light gray */
-  .sourceCode .va { color: #9cdcfe; } /* Variable - light blue */
-  .sourceCode .cf { color: #c586c0; } /* ControlFlow - purple */
-  .sourceCode .im { color: #9cdcfe; } /* Import - light blue */
-  
+  .sourceCode .kw {
+    color: #c586c0;
+  }
+
+  /* Keyword - purple */
+  .sourceCode .dt {
+    color: #4ec9b0;
+  }
+
+  /* DataType - teal */
+  .sourceCode .co {
+    color: #6a9955;
+  }
+
+  /* Comment - green */
+  .sourceCode .st {
+    color: #ce9178;
+  }
+
+  /* String - orange */
+  .sourceCode .ch {
+    color: #ce9178;
+  }
+
+  /* Char - orange */
+  .sourceCode .fu {
+    color: #dcdcaa;
+  }
+
+  /* Function - yellow */
+  .sourceCode .bn {
+    color: #b5cea8;
+  }
+
+  /* BaseN - light green */
+  .sourceCode .op {
+    color: #d4d4d4;
+  }
+
+  /* Operator - light gray */
+  .sourceCode .va {
+    color: #9cdcfe;
+  }
+
+  /* Variable - light blue */
+  .sourceCode .cf {
+    color: #c586c0;
+  }
+
+  /* ControlFlow - purple */
+  .sourceCode .im {
+    color: #9cdcfe;
+  }
+
+  /* Import - light blue */
+
   /* Language-specific dark theme styles */
-  .language-javascript .kw { color: #c586c0; }
-  .language-python .kw { color: #c586c0; }
-  .language-bash .kw { color: #c586c0; }
-  .language-html .kw { color: #c586c0; }
-  .language-css .kw { color: #c586c0; }
-  
+  .language-javascript .kw {
+    color: #c586c0;
+  }
+
+  .language-python .kw {
+    color: #c586c0;
+  }
+
+  .language-bash .kw {
+    color: #c586c0;
+  }
+
+  .language-html .kw {
+    color: #c586c0;
+  }
+
+  .language-css .kw {
+    color: #c586c0;
+  }
+
   /* Custom scrollbars for dark mode */
   ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
   }
-  
+
   ::-webkit-scrollbar-track {
     background: var(--bg-secondary);
   }
-  
+
   ::-webkit-scrollbar-thumb {
     background: var(--accent-primary);
     border-radius: 5px;
   }
-  
+
   ::-webkit-scrollbar-thumb:hover {
     background: var(--accent-hover);
   }
-  
+
   /* Adjust styles for the print button in dark mode */
   .print-button {
     background-color: #282c34;
     border-color: var(--accent-primary);
   }
-  
+
   .print-button:hover {
     background-color: var(--accent-primary);
     color: #fff;
