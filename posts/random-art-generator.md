@@ -5,8 +5,6 @@ tags: art, web development, javascript, met museum, cors proxy, serverless
 description: Taking a break from science to explore art and technology with a web application that makes the Metropolitan Museum's collection accessible through a custom-built CORS proxy solution.
 ---
 
-# Building a Random Art Generator with the Met Museum API and a Serverless CORS Proxy
-
 ## Bridging Art and Technology
 
 Taking a break from our typically science-focused content, today's post explores a project at the intersection of art and technology. As a graduate of the College of Art and Science, I occasionally find myself drawn back to the arts, especially when technology can make it more accessible and discoverable.
@@ -48,3 +46,7 @@ Visit the [Met Random Art Generator](https://noprofits.org/random-art-generator/
 For developers interested in the technical aspects, read about [how the serverless CORS proxy was built](https://hyperpolarizability.com/posts/cors-proxy.html) or explore implementing similar solutions in your own projects.
 
 The combination of a powerful API, a flexible CORS proxy, and thoughtful frontend development creates an experience that's both technically sound and genuinely delightful to use - a small but meaningful contribution to making art more accessible in the digital age.
+
+![Assyrian relief panel showing a winged deity with a bearded face in profile, dating from 883-859 BCE](/images/Reliefpanel.png)
+
+*Gypsum alabaster relief panel from Ancient Near Eastern Art, ca. 883-859 BCE, depicting a winged deity. Image courtesy of The Metropolitan Museum of Art.*
