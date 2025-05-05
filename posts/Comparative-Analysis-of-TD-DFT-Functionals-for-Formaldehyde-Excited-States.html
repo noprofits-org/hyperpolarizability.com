@@ -1,0 +1,1307 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Hyperpolarizability.com - Comparative Analysis of TD-DFT Functionals for Formaldehyde Excited States</title>
+        <link rel="stylesheet" href="../css/default.css" />
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../js/mathjax-config.js"></script>
+        <script src="../js/code-copy.js"></script>
+        <script src="../js/print.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <a href="../">Hyperpolarizability.com</a>
+                </div>
+                <nav>
+                    <a href="../">Home</a>
+                    <a href="../about.html">About</a>
+                    <a href="../contact.html">Contact</a>
+                    <a href="../archive.html">Archive</a>
+                </nav>
+            </div>
+        </header>
+
+        <main role="main">
+            <div class="container">
+                <h1>Comparative Analysis of TD-DFT Functionals for Formaldehyde Excited States</h1>
+                <article>
+    <section class="header">
+        Posted on March 21, 2025
+        
+    </section>
+    
+    <section>
+        <h2 id="abstract">Abstract</h2>
+<p>This study presents a systematic comparison of formaldehyde’s excited states calculated using various time-dependent density functional theory (TD-DFT) methods and equation-of-motion coupled-cluster singles and doubles (EOM-CCSD). We compare four different functionals: B3LYP, CAM-B3LYP, PBE0, and ωB97X-D, examining their predictions of excitation energies and oscillator strengths. Our results show that all methods accurately predict the first n→π* transition at approximately 3.95-4.00 eV with negligible oscillator strength, while the range-separated functionals (CAM-B3LYP and ωB97X-D) predict higher excitation energies for higher excited states compared to hybrid functionals (B3LYP and PBE0). Notably, ωB97X-D predicted the most intense transition with an oscillator strength of 0.186 at 12.73 eV, significantly stronger than comparable transitions with other functionals. The EOM-CCSD reference placed the first excited state slightly higher at 4.15 eV, consistent with the known tendency of coupled-cluster methods to predict higher excitation energies than TD-DFT. This analysis provides valuable insights into the comparative reliability of different computational approaches for studying formaldehyde’s excited states, with implications for photochemical applications and atmospheric chemistry modeling.</p>
+<h2 id="introduction">Introduction</h2>
+<p>Formaldehyde serves as an important benchmark molecule for computational methods due to its small size and well-characterized experimental spectrum. As the simplest aldehyde, formaldehyde plays a crucial role in atmospheric chemistry, where its photochemistry influences tropospheric ozone production and serves as a precursor for atmospheric radicals through photolysis.<span class="citation" data-cites="Gratien2007"><sup>1</sup></span> Understanding the excited states of formaldehyde is therefore fundamental to atmospheric modeling and the development of accurate computational methods for predicting photochemical reactions.</p>
+<p>Time-dependent density functional theory (TD-DFT) has become a standard approach for calculating excited states of molecules due to its favorable balance between computational cost and accuracy.<span class="citation" data-cites="Laurent2013"><sup>2</sup></span> However, the results obtained from TD-DFT calculations can vary significantly depending on the exchange-correlation functional used.<span class="citation" data-cites="Jacquemin2009"><sup>3</sup></span> This variability necessitates systematic comparisons between different functionals to assess their reliability for specific molecular systems and properties.</p>
+<p>In this work, we examine the excited states of formaldehyde using four different exchange-correlation functionals: the hybrid functionals B3LYP and PBE0, and the range-separated functionals CAM-B3LYP and ωB97X-D. Each of these functionals incorporates different amounts of exact exchange and employs different approaches to address the long-range behavior of the exchange potential, which can significantly impact the description of excited states, particularly those with charge-transfer character.<span class="citation" data-cites="Dreuw2004"><sup>4</sup></span></p>
+<p>We also include higher-level EOM-CCSD calculations as a reference point. EOM-CCSD provides a more rigorous treatment of electron correlation compared to TD-DFT methods, making it a valuable benchmark despite its higher computational cost.<span class="citation" data-cites="Krylov2008"><sup>5</sup></span> By comparing results across these different methods, we aim to provide insights into the strengths and limitations of various computational approaches for studying the excited states of small carbonyl compounds.</p>
+<p>The accurate prediction of excited state properties of formaldehyde has significant implications beyond method development. Carbonyl photochemistry plays a central role in atmospheric processes, where the photolysis of formaldehyde contributes to radical formation and subsequent ozone production in the troposphere.<span class="citation" data-cites="Atkinson2003"><sup>6</sup></span> Additionally, understanding the electronic transitions of simple carbonyl compounds provides a foundation for investigating the photochemical behavior of more complex biological molecules containing carbonyl groups.<span class="citation" data-cites="Schreier2007"><sup>7</sup></span></p>
+<h2 id="experimental">Experimental</h2>
+<p>We performed all calculations using the Psi4 quantum chemistry package version 1.7. The optimized geometry of formaldehyde was obtained at the B3LYP/6-311+G(d,p) level of theory. Using this optimized geometry, excited state calculations were performed using TD-DFT with four different functionals: B3LYP, CAM-B3LYP, PBE0, and ωB97X-D, all with the 6-311+G(d,p) basis set. Additionally, equation-of-motion coupled-cluster singles and doubles (EOM-CCSD) calculations were performed using the cc-pVDZ basis set.</p>
+<p>The optimized geometry of formaldehyde obtained at the B3LYP/6-311+G(d,p) level is:</p>
+<p><strong>Table 1.</strong> Optimized Geometry of Formaldehyde at B3LYP/6-311+G(d,p) Level</p>
+<table>
+<thead>
+<tr>
+<th>Atom</th>
+<th>X (Å)</th>
+<th>Y (Å)</th>
+<th>Z (Å)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C</td>
+<td>0.000000000000</td>
+<td>0.000000000000</td>
+<td>0.043298655919</td>
+</tr>
+<tr>
+<td>O</td>
+<td>0.000000000000</td>
+<td>0.000000000000</td>
+<td>1.245034340144</td>
+</tr>
+<tr>
+<td>H</td>
+<td>-0.000000000000</td>
+<td>0.939647671587</td>
+<td>-0.544166498032</td>
+</tr>
+<tr>
+<td>H</td>
+<td>0.000000000000</td>
+<td>-0.939647671587</td>
+<td>-0.544166498032</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env python</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> psi4</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create output directory if it doesn't exist</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> os.path.exists(<span class="st">&quot;results&quot;</span>):</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    os.makedirs(<span class="st">&quot;results&quot;</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Set memory and output file</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>psi4.set_memory(<span class="st">'4 GB'</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>psi4.core.set_output_file(<span class="st">'results/formaldehyde_calculation.out'</span>, <span class="va">False</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Print Psi4 version information</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Psi4 Version: </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(psi4.__version__))</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Define formaldehyde molecule (using optimized geometry)</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>formaldehyde <span class="op">=</span> psi4.geometry(<span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="st">    0 1</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="st">    C    0.000000000000    0.000000000000    0.043298655919</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="st">    O    0.000000000000   -0.000000000000    1.245034340144</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="st">    H   -0.000000000000    0.939647671587   -0.544166498032</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="st">    H    0.000000000000   -0.939647671587   -0.544166498032</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="st">    symmetry c2v</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="st">    no_reorient</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="st">    no_com</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Define basis set for TD-DFT and EOM-CCSD</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>basis_tddft <span class="op">=</span> <span class="st">'6-311+G(d,p)'</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>basis_eom <span class="op">=</span> <span class="st">'cc-pVDZ'</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the functionals to test</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>functionals <span class="op">=</span> [<span class="st">'B3LYP'</span>, <span class="st">'CAM-B3LYP'</span>, <span class="st">'PBE0'</span>, <span class="st">'wB97X-D'</span>]</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to save results</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> save_results(method, excitation_energies, oscillator_strengths):</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    filename <span class="op">=</span> <span class="ss">f&quot;results/formaldehyde_</span><span class="sc">{</span>method<span class="sc">}</span><span class="ss">_results.txt&quot;</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(filename, <span class="st">'w'</span>) <span class="im">as</span> f:</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f&quot;Excitation energies for formaldehyde using </span><span class="sc">{</span>method<span class="sc">}</span><span class="ch">\n</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="st">&quot;-&quot;</span> <span class="op">*</span> <span class="dv">60</span> <span class="op">+</span> <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="st">&quot;State    Energy (eV)    Energy (nm)    Oscillator Strength</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="st">&quot;-&quot;</span> <span class="op">*</span> <span class="dv">60</span> <span class="op">+</span> <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i, (energy_ev, f_osc) <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">zip</span>(excitation_energies, oscillator_strengths)):</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>            energy_nm <span class="op">=</span> <span class="fl">1239.8</span> <span class="op">/</span> energy_ev  <span class="co"># Convert eV to nm</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>            f.write(<span class="ss">f&quot;</span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">:&lt;8}{</span>energy_ev<span class="sc">:&lt;14.4f}{</span>energy_nm<span class="sc">:&lt;14.1f}{</span>f_osc<span class="sc">:&lt;20.6f}</span><span class="ch">\n</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">80</span>)</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;STEP 1: Geometry Optimization with B3LYP/6-311+G(d,p)&quot;</span>)</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">80</span>)</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the geometry optimization</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>psi4.set_options({</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>    <span class="st">'reference'</span>: <span class="st">'rhf'</span>,</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    <span class="st">'basis'</span>: basis_tddft,</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>    <span class="st">'scf_type'</span>: <span class="st">'df'</span>,</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>    <span class="st">'e_convergence'</span>: <span class="fl">1e-8</span>,</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>    <span class="st">'d_convergence'</span>: <span class="fl">1e-8</span>,</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>    <span class="st">'g_convergence'</span>: <span class="st">'gau_verytight'</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="co"># Optimize geometry with B3LYP</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>energy, wfn <span class="op">=</span> psi4.optimize(<span class="st">'B3LYP'</span>, return_wfn<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">Optimized Energy: </span><span class="sc">{</span>energy<span class="sc">}</span><span class="ss"> Hartree&quot;</span>)</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Optimized Geometry:&quot;</span>)</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(formaldehyde.save_string_xyz())</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the optimized geometry to a file</span></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'results/formaldehyde_optimized.xyz'</span>, <span class="st">'w'</span>) <span class="im">as</span> f:</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>    f.write(formaldehyde.save_string_xyz())</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span> <span class="op">+</span> <span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">80</span>)</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;STEP 2: TD-DFT Calculations&quot;</span>)</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">80</span>)</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="co"># TD-DFT calculations with different functionals</span></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>tddft_results <span class="op">=</span> {}</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="co"># Process TD-DFT results by extracting the correct variables</span></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> process_tddft_results(functional):</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>    excitation_energies <span class="op">=</span> []</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>    oscillator_strengths <span class="op">=</span> []</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>    state_info <span class="op">=</span> []</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create a list of all variables</span></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>    all_vars <span class="op">=</span> <span class="bu">list</span>(psi4.core.variables())</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Pattern for extracting precise format based on Psi4 1.7 </span></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Looking for variables like: TD-B3LYP ROOT 0 -&gt; ROOT 2 EXCITATION ENERGY - B2 TRANSITION</span></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Or the newer format: TD-DFT ROOT 0 -&gt; ROOT 2 EXCITATION ENERGY - B2 TRANSITION</span></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>    <span class="co"># First, find all excitation energy variables</span></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>    excitation_vars <span class="op">=</span> []</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> var <span class="kw">in</span> all_vars:</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> ((<span class="st">&quot;TD-&quot;</span> <span class="op">+</span> functional) <span class="kw">in</span> var.upper() <span class="kw">or</span> <span class="st">&quot;TD-DFT&quot;</span> <span class="kw">in</span> var) <span class="kw">and</span> <span class="st">&quot;EXCITATION ENERGY&quot;</span> <span class="kw">in</span> var <span class="kw">and</span> <span class="st">&quot;TRANSITION&quot;</span> <span class="kw">in</span> var:</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>            excitation_vars.append(var)</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Found </span><span class="sc">{</span><span class="bu">len</span>(excitation_vars)<span class="sc">}</span><span class="ss"> excitation variables&quot;</span>)</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Extract the data</span></span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> var <span class="kw">in</span> excitation_vars:</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Get the excitation energy in Hartrees</span></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>            energy_au <span class="op">=</span> psi4.variable(var)</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Convert to eV</span></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>            energy_ev <span class="op">=</span> energy_au <span class="op">*</span> <span class="fl">27.2114</span></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Get the associated oscillator strength variable</span></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>            <span class="co"># The oscillator strength variable replaces &quot;EXCITATION ENERGY&quot; with &quot;OSCILLATOR STRENGTH (LEN)&quot;</span></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>            osc_var <span class="op">=</span> var.replace(<span class="st">&quot;EXCITATION ENERGY&quot;</span>, <span class="st">&quot;OSCILLATOR STRENGTH (LEN)&quot;</span>)</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Check if the oscillator strength variable exists</span></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> osc_var <span class="kw">in</span> all_vars:</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>                oscillator <span class="op">=</span> psi4.variable(osc_var)</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Try alternative oscillator strength variable names</span></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>                osc_var_alt <span class="op">=</span> var.replace(<span class="st">&quot;EXCITATION ENERGY&quot;</span>, <span class="st">&quot;OSCILLATOR STRENGTH&quot;</span>)</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> osc_var_alt <span class="kw">in</span> all_vars:</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>                    oscillator <span class="op">=</span> psi4.variable(osc_var_alt)</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>                <span class="cf">else</span>:</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>                    <span class="co"># Default to 0 if not found</span></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>                    oscillator <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Store the data</span></span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>            excitation_energies.append(energy_ev)</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>            oscillator_strengths.append(oscillator)</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>            state_info.append(var)</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f&quot;  Extracted: </span><span class="sc">{</span>var<span class="sc">.</span>split(<span class="st">'EXCITATION ENERGY'</span>)[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">, Energy: </span><span class="sc">{</span>energy_ev<span class="sc">:.4f}</span><span class="ss"> eV, f = </span><span class="sc">{</span>oscillator<span class="sc">:.6f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f&quot;  Error extracting data from </span><span class="sc">{</span>var<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span><span class="bu">str</span>(e)<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Sort the results by energy</span></span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> excitation_energies:</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Sort all three lists by excitation energy</span></span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>        sorted_data <span class="op">=</span> <span class="bu">sorted</span>(<span class="bu">zip</span>(excitation_energies, oscillator_strengths, state_info))</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>        excitation_energies <span class="op">=</span> [x[<span class="dv">0</span>] <span class="cf">for</span> x <span class="kw">in</span> sorted_data]</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>        oscillator_strengths <span class="op">=</span> [x[<span class="dv">1</span>] <span class="cf">for</span> x <span class="kw">in</span> sorted_data]</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>        state_info <span class="op">=</span> [x[<span class="dv">2</span>] <span class="cf">for</span> x <span class="kw">in</span> sorted_data]</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Remove duplicates (same energy values)</span></span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>        seen <span class="op">=</span> <span class="bu">set</span>()</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>        unique_data <span class="op">=</span> []</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> energy, osc, info <span class="kw">in</span> <span class="bu">zip</span>(excitation_energies, oscillator_strengths, state_info):</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> energy <span class="kw">not</span> <span class="kw">in</span> seen:</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>                seen.add(energy)</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>                unique_data.append((energy, osc, info))</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>        excitation_energies <span class="op">=</span> [x[<span class="dv">0</span>] <span class="cf">for</span> x <span class="kw">in</span> unique_data]</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>        oscillator_strengths <span class="op">=</span> [x[<span class="dv">1</span>] <span class="cf">for</span> x <span class="kw">in</span> unique_data]</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>        state_info <span class="op">=</span> [x[<span class="dv">2</span>] <span class="cf">for</span> x <span class="kw">in</span> unique_data]</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> excitation_energies, oscillator_strengths</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a><span class="co"># Process EOM-CCSD results from correlation energies</span></span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> process_eomccsd_results():</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>    excitation_energies <span class="op">=</span> []</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>    oscillator_strengths <span class="op">=</span> []</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>    irreps <span class="op">=</span> []</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create a list of all variables</span></span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>    all_vars <span class="op">=</span> <span class="bu">list</span>(psi4.core.variables())</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Look for the ground state CCSD energy</span></span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>    ground_state_energy <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> var <span class="kw">in</span> all_vars:</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="st">&quot;CCSD ROOT 0 (A1) TOTAL ENERGY&quot;</span> <span class="kw">in</span> var:</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>            ground_state_energy <span class="op">=</span> psi4.variable(var)</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ground_state_energy <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;Could not find ground state CCSD energy&quot;</span>)</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [], []</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Ground state CCSD energy: </span><span class="sc">{</span>ground_state_energy<span class="sc">}</span><span class="ss"> Hartree&quot;</span>)</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Look for excited state energies in all irreps</span></span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>    irrep_patterns <span class="op">=</span> [<span class="st">&quot;A1&quot;</span>, <span class="st">&quot;A2&quot;</span>, <span class="st">&quot;B1&quot;</span>, <span class="st">&quot;B2&quot;</span>]</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> irrep <span class="kw">in</span> irrep_patterns:</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Skip irrep A1 root 0 as it's the ground state</span></span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>        start_root <span class="op">=</span> <span class="dv">1</span> <span class="cf">if</span> irrep <span class="op">==</span> <span class="st">&quot;A1&quot;</span> <span class="cf">else</span> <span class="dv">0</span></span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> root <span class="kw">in</span> <span class="bu">range</span>(start_root, <span class="dv">20</span>):  <span class="co"># Try up to 20 roots per irrep</span></span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>            var_name <span class="op">=</span> <span class="ss">f&quot;CCSD ROOT </span><span class="sc">{</span>root<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>irrep<span class="sc">}</span><span class="ss">) TOTAL ENERGY&quot;</span></span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> var_name <span class="kw">in</span> all_vars:</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>                excited_state_energy <span class="op">=</span> psi4.variable(var_name)</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Calculate excitation energy</span></span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>                exc_energy_hartree <span class="op">=</span> excited_state_energy <span class="op">-</span> ground_state_energy</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Convert to eV</span></span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>                exc_energy_ev <span class="op">=</span> exc_energy_hartree <span class="op">*</span> <span class="fl">27.2114</span></span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>                </span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>                <span class="co"># EOM-CCSD doesn't provide oscillator strengths in this format</span></span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>                <span class="co"># so we'll default to 0</span></span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>                osc_strength <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>                </span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>                excitation_energies.append(exc_energy_ev)</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>                oscillator_strengths.append(osc_strength)</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>                irreps.append(<span class="ss">f&quot;</span><span class="sc">{</span>irrep<span class="sc">}</span><span class="ss"> ROOT </span><span class="sc">{</span>root<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>                </span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="ss">f&quot;  Found excited state: </span><span class="sc">{</span>irrep<span class="sc">}</span><span class="ss"> ROOT </span><span class="sc">{</span>root<span class="sc">}</span><span class="ss">, Energy: </span><span class="sc">{</span>exc_energy_ev<span class="sc">:.4f}</span><span class="ss"> eV&quot;</span>)</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Sort the results by energy</span></span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> excitation_energies:</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Sort all three lists by excitation energy</span></span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>        sorted_indices <span class="op">=</span> np.argsort(excitation_energies)</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>        excitation_energies <span class="op">=</span> [excitation_energies[i] <span class="cf">for</span> i <span class="kw">in</span> sorted_indices]</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>        oscillator_strengths <span class="op">=</span> [oscillator_strengths[i] <span class="cf">for</span> i <span class="kw">in</span> sorted_indices]</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>        irreps <span class="op">=</span> [irreps[i] <span class="cf">for</span> i <span class="kw">in</span> sorted_indices]</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Only keep positive excitation energies (negative would be unphysical)</span></span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>        positive_indices <span class="op">=</span> [i <span class="cf">for</span> i, e <span class="kw">in</span> <span class="bu">enumerate</span>(excitation_energies) <span class="cf">if</span> e <span class="op">&gt;</span> <span class="dv">0</span>]</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>        excitation_energies <span class="op">=</span> [excitation_energies[i] <span class="cf">for</span> i <span class="kw">in</span> positive_indices]</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>        oscillator_strengths <span class="op">=</span> [oscillator_strengths[i] <span class="cf">for</span> i <span class="kw">in</span> positive_indices]</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>        irreps <span class="op">=</span> [irreps[i] <span class="cf">for</span> i <span class="kw">in</span> positive_indices]</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> excitation_energies, oscillator_strengths</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> functional <span class="kw">in</span> functionals:</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">Running TD-DFT calculations with </span><span class="sc">{</span>functional<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>basis_tddft<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Set options for TD-DFT calculations</span></span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>    psi4.set_options({</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>        <span class="st">'reference'</span>: <span class="st">'rhf'</span>,</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>        <span class="st">'basis'</span>: basis_tddft,</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>        <span class="st">'scf_type'</span>: <span class="st">'df'</span>,</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>        <span class="st">'e_convergence'</span>: <span class="fl">1e-8</span>,</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>        <span class="st">'d_convergence'</span>: <span class="fl">1e-8</span>,</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>        <span class="st">'tdscf_states'</span>: [<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>],  <span class="co"># This is essential for Psi4 1.7</span></span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>        <span class="st">'roots_per_irrep'</span>: [<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>]  <span class="co"># Request 3 states per irrep</span></span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Run the TD-DFT calculation</span></span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>        method <span class="op">=</span> <span class="ss">f&quot;td-</span><span class="sc">{</span>functional<span class="sc">.</span>lower()<span class="sc">}</span><span class="ss">&quot;</span></span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Using method: </span><span class="sc">{</span>method<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>        energy, wfn <span class="op">=</span> psi4.energy(method, return_wfn<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Process the TD-DFT results</span></span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>        excitation_energies, oscillator_strengths <span class="op">=</span> process_tddft_results(functional)</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Save the results</span></span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> excitation_energies:</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>            save_results(<span class="ss">f&quot;TDDFT_</span><span class="sc">{</span>functional<span class="sc">}</span><span class="ss">&quot;</span>, excitation_energies, oscillator_strengths)</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>            tddft_results[functional] <span class="op">=</span> {</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>                <span class="st">'energies'</span>: excitation_energies,</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>                <span class="st">'oscillator_strengths'</span>: oscillator_strengths</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>            }</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f&quot;No excited states found for </span><span class="sc">{</span>functional<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Print all variables containing the functional name to help debug</span></span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>            all_vars <span class="op">=</span> <span class="bu">list</span>(psi4.core.variables())</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">&quot;Looking for variables containing the functional name:&quot;</span>)</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> var <span class="kw">in</span> all_vars:</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> functional.upper() <span class="kw">in</span> var.upper():</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>                    <span class="bu">print</span>(<span class="ss">f&quot;  </span><span class="sc">{</span>var<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>psi4<span class="sc">.</span>variable(var)<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Error running TD-DFT for </span><span class="sc">{</span>functional<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span><span class="bu">str</span>(e)<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a><span class="co"># Run EOM-CCSD calculation</span></span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span> <span class="op">+</span> <span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">80</span>)</span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Running EOM-CCSD/cc-pVDZ calculation&quot;</span>)</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">80</span>)</span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>psi4.set_options({</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>    <span class="st">'reference'</span>: <span class="st">'rhf'</span>,</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>    <span class="st">'basis'</span>: basis_eom,</span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>    <span class="st">'scf_type'</span>: <span class="st">'df'</span>,</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>    <span class="st">'e_convergence'</span>: <span class="fl">1e-8</span>,</span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>    <span class="st">'d_convergence'</span>: <span class="fl">1e-8</span>,</span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>    <span class="st">'cc_type'</span>: <span class="st">'conv'</span>,</span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>    <span class="st">'freeze_core'</span>: <span class="st">'true'</span>,</span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>    <span class="st">'roots_per_irrep'</span>: [<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>]  <span class="co"># Request 3 states per irrep</span></span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Run EOM-CCSD</span></span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>    energy, wfn <span class="op">=</span> psi4.energy(<span class="st">'eom-ccsd'</span>, return_wfn<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Process the EOM-CCSD results</span></span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>    excitation_energies, oscillator_strengths <span class="op">=</span> process_eomccsd_results()</span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Save the results</span></span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> excitation_energies:</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>        save_results(<span class="st">&quot;EOM-CCSD&quot;</span>, excitation_energies, oscillator_strengths)</span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>        tddft_results[<span class="st">'EOM-CCSD'</span>] <span class="op">=</span> {</span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>            <span class="st">'energies'</span>: excitation_energies,</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>            <span class="st">'oscillator_strengths'</span>: oscillator_strengths</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;No excited states found for EOM-CCSD&quot;</span>)</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Print all variables with &quot;EOM&quot; or &quot;CCSD&quot; to help debug</span></span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>        all_vars <span class="op">=</span> <span class="bu">list</span>(psi4.core.variables())</span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;Looking for variables containing EOM or CCSD:&quot;</span>)</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> var <span class="kw">in</span> all_vars:</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="st">&quot;CCSD&quot;</span> <span class="kw">in</span> var:</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="ss">f&quot;  </span><span class="sc">{</span>var<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>psi4<span class="sc">.</span>variable(var)<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Error running EOM-CCSD: </span><span class="sc">{</span><span class="bu">str</span>(e)<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate summary comparison</span></span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span> <span class="op">+</span> <span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">80</span>)</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;SUMMARY OF RESULTS&quot;</span>)</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">80</span>)</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a comparison table for the first few states</span></span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'results/formaldehyde_comparison.txt'</span>, <span class="st">'w'</span>) <span class="im">as</span> f:</span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>    f.write(<span class="st">&quot;Comparison of Excitation Energies (eV) for Formaldehyde</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>    f.write(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">70</span> <span class="op">+</span> <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Write header</span></span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>    f.write(<span class="ss">f&quot;</span><span class="sc">{</span><span class="st">'State'</span><span class="sc">:&lt;8}</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> method <span class="kw">in</span> functionals <span class="op">+</span> [<span class="st">'EOM-CCSD'</span>]:</span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> method <span class="kw">in</span> tddft_results:</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>            f.write(<span class="ss">f&quot;</span><span class="sc">{</span>method<span class="sc">:&lt;12}</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>    f.write(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>    f.write(<span class="st">&quot;-&quot;</span> <span class="op">*</span> <span class="dv">70</span> <span class="op">+</span> <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Determine max number of states to display</span></span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>    max_states <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> method <span class="kw">in</span> tddft_results:</span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> method <span class="kw">in</span> tddft_results:</span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>            max_states <span class="op">=</span> <span class="bu">max</span>(max_states, <span class="bu">len</span>(tddft_results[method][<span class="st">'energies'</span>]))</span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Write data for each state</span></span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> state <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">min</span>(<span class="dv">10</span>, max_states)):  <span class="co"># Limit to first 10 states</span></span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f&quot;</span><span class="sc">{</span>state<span class="op">+</span><span class="dv">1</span><span class="sc">:&lt;8}</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> method <span class="kw">in</span> functionals <span class="op">+</span> [<span class="st">'EOM-CCSD'</span>]:</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> method <span class="kw">in</span> tddft_results <span class="kw">and</span> state <span class="op">&lt;</span> <span class="bu">len</span>(tddft_results[method][<span class="st">'energies'</span>]):</span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>                f.write(<span class="ss">f&quot;</span><span class="sc">{</span>tddft_results[method][<span class="st">'energies'</span>][state]<span class="sc">:&lt;12.4f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>                f.write(<span class="ss">f&quot;</span><span class="sc">{</span><span class="st">'N/A'</span><span class="sc">:&lt;12}</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;All calculations complete. Results are saved in the 'results' directory.&quot;</span>)</span></code></pre></div>
+<p>All calculations were performed on the same computing system described in “Quantum Chemical Calculations of Hyperpolarizability” using Ubuntu (noble/24.04) with Miniconda to manage Python dependencies and ensure reproducibility.</p>
+<h2 id="results">Results</h2>
+<h3 id="b3lyp-results">B3LYP Results</h3>
+<p><strong>Table 5.</strong> Excitation Energies and Oscillator Strengths for Formaldehyde Using TD-B3LYP/6-311+G(d,p)</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Energy (eV)</th>
+<th>Energy (nm)</th>
+<th>Oscillator Strength</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>3.96</td>
+<td>312.9</td>
+<td>0.000000</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6.85</td>
+<td>180.9</td>
+<td>0.031051</td>
+</tr>
+<tr>
+<td>3</td>
+<td>7.64</td>
+<td>162.2</td>
+<td>0.025398</td>
+</tr>
+<tr>
+<td>4</td>
+<td>7.84</td>
+<td>158.2</td>
+<td>0.048627</td>
+</tr>
+<tr>
+<td>5</td>
+<td>8.34</td>
+<td>148.6</td>
+<td>0.000000</td>
+</tr>
+<tr>
+<td>6</td>
+<td>9.10</td>
+<td>136.3</td>
+<td>0.000851</td>
+</tr>
+<tr>
+<td>7</td>
+<td>9.50</td>
+<td>130.5</td>
+<td>0.125549</td>
+</tr>
+<tr>
+<td>8</td>
+<td>10.12</td>
+<td>122.5</td>
+<td>0.000000</td>
+</tr>
+<tr>
+<td>9</td>
+<td>10.31</td>
+<td>120.2</td>
+<td>0.117317</td>
+</tr>
+<tr>
+<td>10</td>
+<td>10.43</td>
+<td>118.8</td>
+<td>0.041692</td>
+</tr>
+<tr>
+<td>11</td>
+<td>11.30</td>
+<td>109.7</td>
+<td>0.041637</td>
+</tr>
+<tr>
+<td>12</td>
+<td>11.81</td>
+<td>105.0</td>
+<td>0.014605</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cam-b3lyp-results">CAM-B3LYP Results</h3>
+<p><strong>Table 2.</strong> Excitation Energies and Oscillator Strengths for Formaldehyde Using TD-CAM-B3LYP/6-311+G(d,p)</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Energy (eV)</th>
+<th>Energy (nm)</th>
+<th>Oscillator Strength</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>3.95</td>
+<td>313.9</td>
+<td>0.000000</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7.16</td>
+<td>173.0</td>
+<td>0.021544</td>
+</tr>
+<tr>
+<td>3</td>
+<td>7.89</td>
+<td>157.1</td>
+<td>0.039058</td>
+</tr>
+<tr>
+<td>4</td>
+<td>8.15</td>
+<td>152.1</td>
+<td>0.053494</td>
+</tr>
+<tr>
+<td>5</td>
+<td>8.58</td>
+<td>144.6</td>
+<td>0.000000</td>
+</tr>
+<tr>
+<td>6</td>
+<td>9.19</td>
+<td>134.9</td>
+<td>0.000817</td>
+</tr>
+<tr>
+<td>7</td>
+<td>9.59</td>
+<td>129.3</td>
+<td>0.141008</td>
+</tr>
+<tr>
+<td>8</td>
+<td>10.26</td>
+<td>120.8</td>
+<td>0.000000</td>
+</tr>
+<tr>
+<td>9</td>
+<td>10.73</td>
+<td>115.5</td>
+<td>0.135552</td>
+</tr>
+<tr>
+<td>10</td>
+<td>10.79</td>
+<td>114.9</td>
+<td>0.062459</td>
+</tr>
+<tr>
+<td>11</td>
+<td>11.58</td>
+<td>107.1</td>
+<td>0.027881</td>
+</tr>
+<tr>
+<td>12</td>
+<td>12.28</td>
+<td>101.0</td>
+<td>0.057521</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pbe0-results">PBE0 Results</h3>
+<p><strong>Table 3.</strong> Excitation Energies and Oscillator Strengths for Formaldehyde Using TD-PBE0/6-311+G(d,p)</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Energy (eV)</th>
+<th>Energy (nm)</th>
+<th>Oscillator Strength</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>3.97</td>
+<td>312.3</td>
+<td>0.000000</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7.10</td>
+<td>174.7</td>
+<td>0.031984</td>
+</tr>
+<tr>
+<td>3</td>
+<td>7.87</td>
+<td>157.6</td>
+<td>0.025990</td>
+</tr>
+<tr>
+<td>4</td>
+<td>8.08</td>
+<td>153.5</td>
+<td>0.049389</td>
+</tr>
+<tr>
+<td>5</td>
+<td>8.57</td>
+<td>144.7</td>
+<td>0.000000</td>
+</tr>
+<tr>
+<td>6</td>
+<td>9.18</td>
+<td>135.0</td>
+<td>0.000659</td>
+</tr>
+<tr>
+<td>7</td>
+<td>9.62</td>
+<td>128.8</td>
+<td>0.131873</td>
+</tr>
+<tr>
+<td>8</td>
+<td>10.23</td>
+<td>121.2</td>
+<td>0.000000</td>
+</tr>
+<tr>
+<td>9</td>
+<td>10.55</td>
+<td>117.5</td>
+<td>0.129416</td>
+</tr>
+<tr>
+<td>10</td>
+<td>10.74</td>
+<td>115.4</td>
+<td>0.045916</td>
+</tr>
+<tr>
+<td>11</td>
+<td>11.57</td>
+<td>107.1</td>
+<td>0.039117</td>
+</tr>
+<tr>
+<td>12</td>
+<td>12.15</td>
+<td>102.0</td>
+<td>0.030965</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ωb97x-d-results">ωB97X-D Results</h3>
+<p><strong>Table 4.</strong> Excitation Energies and Oscillator Strengths for Formaldehyde Using TD-ωB97X-D/6-311+G(d,p)</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Energy (eV)</th>
+<th>Energy (nm)</th>
+<th>Oscillator Strength</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>3.99</td>
+<td>310.6</td>
+<td>0.000000</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7.63</td>
+<td>162.5</td>
+<td>0.019952</td>
+</tr>
+<tr>
+<td>3</td>
+<td>8.36</td>
+<td>148.4</td>
+<td>0.052588</td>
+</tr>
+<tr>
+<td>4</td>
+<td>8.64</td>
+<td>143.5</td>
+<td>0.064818</td>
+</tr>
+<tr>
+<td>5</td>
+<td>9.05</td>
+<td>137.0</td>
+<td>0.000000</td>
+</tr>
+<tr>
+<td>6</td>
+<td>9.29</td>
+<td>133.5</td>
+<td>0.000732</td>
+</tr>
+<tr>
+<td>7</td>
+<td>9.69</td>
+<td>128.0</td>
+<td>0.151336</td>
+</tr>
+<tr>
+<td>8</td>
+<td>10.37</td>
+<td>119.5</td>
+<td>0.000000</td>
+</tr>
+<tr>
+<td>9</td>
+<td>10.99</td>
+<td>112.8</td>
+<td>0.144920</td>
+</tr>
+<tr>
+<td>10</td>
+<td>11.31</td>
+<td>109.7</td>
+<td>0.082613</td>
+</tr>
+<tr>
+<td>11</td>
+<td>12.15</td>
+<td>102.0</td>
+<td>0.017689</td>
+</tr>
+<tr>
+<td>12</td>
+<td>12.73</td>
+<td>97.4</td>
+<td>0.186193</td>
+</tr>
+</tbody>
+</table>
+<h3 id="eom-ccsd-results">EOM-CCSD Results</h3>
+<p><strong>Table 6.</strong> Excitation Energies for Formaldehyde Using EOM-CCSD/cc-pVDZ</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Symmetry</th>
+<th>Energy (eV)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>A2 ROOT 1</td>
+<td>4.15</td>
+</tr>
+<tr>
+<td>2</td>
+<td>B2 ROOT 2</td>
+<td>8.61</td>
+</tr>
+<tr>
+<td>3</td>
+<td>B1 ROOT 3</td>
+<td>9.59</td>
+</tr>
+<tr>
+<td>4</td>
+<td>A1 ROOT 4</td>
+<td>10.11</td>
+</tr>
+<tr>
+<td>5</td>
+<td>A2 ROOT 5</td>
+<td>10.85</td>
+</tr>
+<tr>
+<td>6</td>
+<td>A1 ROOT 6</td>
+<td>11.45</td>
+</tr>
+<tr>
+<td>7</td>
+<td>B2 ROOT 7</td>
+<td>11.61</td>
+</tr>
+<tr>
+<td>8</td>
+<td>B1 ROOT 8</td>
+<td>12.36</td>
+</tr>
+<tr>
+<td>9</td>
+<td>A2 ROOT 9</td>
+<td>14.16</td>
+</tr>
+<tr>
+<td>10</td>
+<td>A1 ROOT 10</td>
+<td>14.24</td>
+</tr>
+<tr>
+<td>11</td>
+<td>B2 ROOT 11</td>
+<td>15.01</td>
+</tr>
+<tr>
+<td>12</td>
+<td>B1 ROOT 12</td>
+<td>15.48</td>
+</tr>
+</tbody>
+</table>
+<pre class="tikzpicture"><code>\begin{axis}[
+    width=12cm,
+    height=9cm,
+    xlabel={Excited State},
+    ylabel={Excitation Energy (eV)},
+    grid=major,
+    grid style={line width=.2pt, draw=gray!50},
+    axis lines=left,
+    xmin=0.5,
+    xmax=12.5,
+    ymin=3,
+    ymax=16,
+    xtick={1,2,3,4,5,6,7,8,9,10,11,12},
+    legend pos=north west,
+    legend style={
+        draw=none,
+        fill=white,
+        fill opacity=0.8
+    },
+    tick style={color=black},
+    every axis label/.style={font=\large},
+    every tick label/.style={font=\large},
+    title style={font=\large\bfseries},
+    scaled ticks=false,
+    legend cell align={left}
+]
+
+% B3LYP data
+\addplot[
+    thick,
+    color=blue,
+    mark=*,
+    mark size=2pt,
+] coordinates {
+    (1, 3.96)
+    (2, 6.85)
+    (3, 7.64)
+    (4, 7.84)
+    (5, 8.34)
+    (6, 9.10)
+    (7, 9.50)
+    (8, 10.12)
+    (9, 10.31)
+    (10, 10.43)
+    (11, 11.30)
+    (12, 11.81)
+};
+
+% CAM-B3LYP data
+\addplot[
+    thick,
+    color=red,
+    mark=square*,
+    mark size=2pt,
+] coordinates {
+    (1, 3.95)
+    (2, 7.16)
+    (3, 7.89)
+    (4, 8.15)
+    (5, 8.58)
+    (6, 9.19)
+    (7, 9.59)
+    (8, 10.26)
+    (9, 10.73)
+    (10, 10.79)
+    (11, 11.58)
+    (12, 12.28)
+};
+
+% PBE0 data
+\addplot[
+    thick,
+    color=green!60!black,
+    mark=diamond*,
+    mark size=2.5pt,
+] coordinates {
+    (1, 3.97)
+    (2, 7.10)
+    (3, 7.87)
+    (4, 8.08)
+    (5, 8.57)
+    (6, 9.18)
+    (7, 9.62)
+    (8, 10.23)
+    (9, 10.55)
+    (10, 10.74)
+    (11, 11.57)
+    (12, 12.15)
+};
+
+% ωB97X-D data
+\addplot[
+    thick,
+    color=orange,
+    mark=triangle*,
+    mark size=2.5pt,
+] coordinates {
+    (1, 3.99)
+    (2, 7.63)
+    (3, 8.36)
+    (4, 8.64)
+    (5, 9.05)
+    (6, 9.29)
+    (7, 9.69)
+    (8, 10.37)
+    (9, 10.99)
+    (10, 11.31)
+    (11, 12.15)
+    (12, 12.73)
+};
+
+% EOM-CCSD data
+\addplot[
+    thick,
+    color=purple,
+    mark=pentagon*,
+    mark size=2.5pt,
+    dashed
+] coordinates {
+    (1, 4.15)
+    (2, 8.61)
+    (3, 9.59)
+    (4, 10.11)
+    (5, 10.85)
+    (6, 11.45)
+    (7, 11.61)
+    (8, 12.36)
+    (9, 14.16)
+    (10, 14.24)
+    (11, 15.01)
+    (12, 15.48)
+};
+
+\legend{B3LYP, CAM-B3LYP, PBE0, $\omega$B97X-D, EOM-CCSD};
+\end{axis}</code></pre>
+<p><strong>Figure 1.</strong> Comparison of excitation energies for formaldehyde calculated using different theoretical methods. The hybrid functionals (B3LYP, PBE0) consistently predict lower excitation energies compared to range-separated functionals (CAM-B3LYP, <span class="math inline">\(\omega\)</span>B97X-D) for higher excited states. The EOM-CCSD method shows significantly higher energies for states beyond the 8th excited state, consistent with its more rigorous treatment of electron correlation.</p>
+<pre class="tikzpicture"><code>\begin{axis}[
+    width=12cm,
+    height=9cm,
+    xlabel={Excited State},
+    ylabel={Oscillator Strength},
+    grid=major,
+    grid style={line width=.2pt, draw=gray!50},
+    axis lines=left,
+    xmin=0.5,
+    xmax=12.5,
+    ymin=0,
+    ymax=0.2,
+    xtick={1,2,3,4,5,6,7,8,9,10,11,12},
+    tick style={color=black},
+    every axis label/.style={font=\large},
+    every tick label/.style={font=\large},
+    title style={font=\large\bfseries},
+    scaled ticks=false,
+    ybar,
+    bar width=0.15cm,
+    legend style={
+        at={(0.5,1)},
+        anchor=south,
+        legend columns=4,
+        draw=none,
+        fill=white,
+        fill opacity=1
+    }
+]
+
+% B3LYP oscillator strengths
+\addplot[
+    color=blue,
+    fill=blue!50
+] coordinates {
+    (1, 0.000000)
+    (2, 0.031051)
+    (3, 0.025398)
+    (4, 0.048627)
+    (5, 0.000000)
+    (6, 0.000851)
+    (7, 0.125549)
+    (8, 0.000000)
+    (9, 0.117317)
+    (10, 0.041692)
+    (11, 0.041637)
+    (12, 0.014605)
+};
+
+% CAM-B3LYP oscillator strengths
+\addplot[
+    color=red,
+    fill=red!50
+] coordinates {
+    (1, 0.000000)
+    (2, 0.021544)
+    (3, 0.039058)
+    (4, 0.053494)
+    (5, 0.000000)
+    (6, 0.000817)
+    (7, 0.141008)
+    (8, 0.000000)
+    (9, 0.135552)
+    (10, 0.062459)
+    (11, 0.027881)
+    (12, 0.057521)
+};
+
+% PBE0 oscillator strengths
+\addplot[
+    color=green!60!black,
+    fill=green!50
+] coordinates {
+    (1, 0.000000)
+    (2, 0.031984)
+    (3, 0.025990)
+    (4, 0.049389)
+    (5, 0.000000)
+    (6, 0.000659)
+    (7, 0.131873)
+    (8, 0.000000)
+    (9, 0.129416)
+    (10, 0.045916)
+    (11, 0.039117)
+    (12, 0.030965)
+};
+
+% ωB97X-D oscillator strengths
+\addplot[
+    color=orange,
+    fill=orange!50
+] coordinates {
+    (1, 0.000000)
+    (2, 0.019952)
+    (3, 0.052588)
+    (4, 0.064818)
+    (5, 0.000000)
+    (6, 0.000732)
+    (7, 0.151336)
+    (8, 0.000000)
+    (9, 0.144920)
+    (10, 0.082613)
+    (11, 0.017689)
+    (12, 0.186193)
+};
+
+\legend{B3LYP, CAM-B3LYP, PBE0, $\omega$B97X-D};
+\end{axis}</code></pre>
+<p><strong>Figure 2.</strong> Oscillator strengths for formaldehyde excited states calculated using different DFT functionals. All methods predict zero oscillator strength for the first excited state (n<span class="math inline">\(\to\pi\)</span>* transition), consistent with its symmetry-forbidden nature. The <span class="math inline">\(\omega\)</span>B97X-D functional predicts the most intense transition for state 12 (0.186), significantly stronger than comparable transitions calculated with other functionals. States 7 and 9 show consistently high oscillator strengths across all methods.</p>
+<pre class="tikzpicture"><code>\begin{axis}[
+    width=12cm,
+    height=9cm,
+    xlabel={Excited State},
+    ylabel={Excitation Energy Difference (eV)},
+    grid=major,
+    grid style={line width=.2pt, draw=gray!50},
+    axis lines=left,
+    xmin=0.5,
+    xmax=12.5,
+    xtick={1,2,3,4,5,6,7,8,9,10,11,12},
+    legend pos=north east,
+    legend style={
+        draw=none,
+        fill=white,
+        fill opacity=0.8
+    },
+    tick style={color=black},
+    every axis label/.style={font=\large},
+    every tick label/.style={font=\large},
+    title style={font=\large\bfseries},
+    scaled ticks=false,
+    legend cell align={left}
+]
+
+% Calculate the differences and plot
+\addplot[
+    thick,
+    color=blue,
+    mark=*,
+    mark size=2pt,
+] coordinates {
+    (1, 3.96 - 4.15)
+    (2, 6.85 - 8.61)
+    (3, 7.64 - 9.59)
+    (4, 7.84 - 10.11)
+    (5, 8.34 - 10.85)
+    (6, 9.10 - 11.45)
+    (7, 9.50 - 11.61)
+    (8, 10.12 - 12.36)
+    (9, 10.31 - 14.16)
+    (10, 10.43 - 14.24)
+    (11, 11.30 - 15.01)
+    (12, 11.81 - 15.48)
+};
+
+\addplot[
+    thick,
+    color=red,
+    mark=square*,
+    mark size=2pt,
+] coordinates {
+    (1, 3.95 - 4.15)
+    (2, 7.16 - 8.61)
+    (3, 7.89 - 9.59)
+    (4, 8.15 - 10.11)
+    (5, 8.58 - 10.85)
+    (6, 9.19 - 11.45)
+    (7, 9.59 - 11.61)
+    (8, 10.26 - 12.36)
+    (9, 10.73 - 14.16)
+    (10, 10.79 - 14.24)
+    (11, 11.58 - 15.01)
+    (12, 12.28 - 15.48)
+};
+
+\addplot[
+    thick,
+    color=green!60!black,
+    mark=diamond*,
+    mark size=2.5pt,
+] coordinates {
+    (1, 3.97 - 4.15)
+    (2, 7.10 - 8.61)
+    (3, 7.87 - 9.59)
+    (4, 8.08 - 10.11)
+    (5, 8.57 - 10.85)
+    (6, 9.18 - 11.45)
+    (7, 9.62 - 11.61)
+    (8, 10.23 - 12.36)
+    (9, 10.55 - 14.16)
+    (10, 10.74 - 14.24)
+    (11, 11.57 - 15.01)
+    (12, 12.15 - 15.48)
+};
+
+\addplot[
+    thick,
+    color=orange,
+    mark=triangle*,
+    mark size=2.5pt,
+] coordinates {
+    (1, 3.99 - 4.15)
+    (2, 7.63 - 8.61)
+    (3, 8.36 - 9.59)
+    (4, 8.64 - 10.11)
+    (5, 9.05 - 10.85)
+    (6, 9.29 - 11.45)
+    (7, 9.69 - 11.61)
+    (8, 10.37 - 12.36)
+    (9, 10.99 - 14.16)
+    (10, 11.31 - 14.24)
+    (11, 12.15 - 15.01)
+    (12, 12.73 - 15.48)
+};
+
+\legend{B3LYP, CAM-B3LYP, PBE0, $\omega$B97X-D};
+\end{axis}</code></pre>
+<p><strong>Figure 3.</strong> Difference in excitation energies (TD-DFT - EOM-CCSD) for formaldehyde calculated using different DFT functionals. This figure shows the deviation of TD-DFT predicted excitation energies from the EOM-CCSD reference values. Negative values indicate that TD-DFT underestimates the excitation energy compared to EOM-CCSD, while positive values indicate overestimation. This visualization helps to assess the relative accuracy of different TD-DFT functionals in comparison to the higher-level EOM-CCSD method.</p>
+<h2 id="discussion">Discussion</h2>
+<p>The excited state calculations of formaldehyde using different computational methods reveal several important trends and insights into the performance of various density functional approximations. Comparing the results across the four functionals (B3LYP, CAM-B3LYP, PBE0, and ωB97X-D) and the higher-level EOM-CCSD method provides valuable information about the strengths and limitations of these approaches.</p>
+<h3 id="first-excited-state-the-nπ-transition">First Excited State: The n→π* Transition</h3>
+<p>All four functionals predict the first excited state of formaldehyde to occur around 3.95-4.00 eV, which corresponds to the well-known n→π* transition. This excitation involves the promotion of an electron from a non-bonding orbital centered on the oxygen atom to the π* antibonding orbital of the C=O bond.<span class="citation" data-cites="Clouthier1983"><sup>8</sup></span> The consistent prediction across all methods suggests that this particular transition is well-described by TD-DFT regardless of the functional choice. The EOM-CCSD calculation places this transition slightly higher at 4.15 eV, which is consistent with the tendency of coupled-cluster methods to predict slightly higher excitation energies than TD-DFT.<span class="citation" data-cites="Sinha2019"><sup>9</sup></span></p>
+<p>The negligible oscillator strength associated with this transition (approximately zero across all methods) correctly reflects its symmetry-forbidden nature in the C₂ᵥ point group, as it corresponds to an A₂ symmetry state. This agreement with established spectroscopic knowledge provides confidence in the basic reliability of all the computational methods employed.<span class="citation" data-cites="Brand1995"><sup>10</sup></span></p>
+<h3 id="higher-energy-states-functional-dependence">Higher Energy States: Functional Dependence</h3>
+<p>For higher energy excitations, we observe more significant differences between the functionals, particularly between the hybrid functionals (B3LYP and PBE0) and the range-separated functionals (CAM-B3LYP and ωB97X-D).</p>
+<p>The range-separated functionals generally predict higher excitation energies for most states compared to the hybrid functionals. This is particularly evident for the higher excited states (states 10-12), where ωB97X-D predicts energies up to 0.9 eV higher than B3LYP for comparable transitions. This behavior is expected since range-separated functionals are designed to improve the description of long-range interactions, which can be particularly important for excited states with partial charge-transfer character or Rydberg character.<span class="citation" data-cites="Peach2008"><sup>11</sup></span> The correction to the long-range exchange interaction typically leads to increased excitation energies relative to standard hybrid functionals.</p>
+<p>The oscillator strengths also show notable variations across functionals. For instance, the most intense transition (state 7) has an oscillator strength of 0.126 with B3LYP, 0.141 with CAM-B3LYP, 0.132 with PBE0, and 0.151 with ωB97X-D. These differences, while not dramatic, could be significant when comparing calculated spectra to experimental measurements.<span class="citation" data-cites="Laurent2013"><sup>2</sup></span> The ωB97X-D functional predicts the highest oscillator strength (0.186) for its state 12 at 12.73 eV, which is substantially stronger than comparable transitions in other functionals.</p>
+<h3 id="comparison-with-eom-ccsd">Comparison with EOM-CCSD</h3>
+<p>The EOM-CCSD results provide a valuable reference point, as coupled-cluster methods are generally considered more reliable for excited states than TD-DFT, albeit at a much higher computational cost.<span class="citation" data-cites="Krylov2008"><sup>5</sup></span> The symmetry assignments from EOM-CCSD help identify the character of the transitions and can be used to assess the quality of the TD-DFT predictions.</p>
+<p>The first excited state in EOM-CCSD (A₂ symmetry at 4.15 eV) corresponds well with the lowest energy transition found in all TD-DFT calculations. For higher excited states, the agreement is less straightforward due to potential reordering of states between methods. Nevertheless, we can observe that the range-separated functionals, particularly ωB97X-D, often predict excitation energies closer to the EOM-CCSD values than the hybrid functionals do. This supports the general observation that range-separated functionals may provide a more balanced description of various types of electronic excitations, especially those with charge-transfer or Rydberg character.<span class="citation" data-cites="Isegawa2012"><sup>12</sup></span></p>
+<h3 id="methodological-considerations">Methodological Considerations</h3>
+<p>The differences observed between computational methods highlight important considerations for excited state calculations. While all functionals correctly identify the first n→π* transition of formaldehyde, the variations in higher excited states underscore the importance of functional selection based on the specific properties of interest.<span class="citation" data-cites="Laurent2013"><sup>2</sup></span></p>
+<p>The hybrid functionals (B3LYP and PBE0) provide similar results to each other, as do the range-separated functionals (CAM-B3LYP and ωB97X-D). This suggests that the long-range correction is a more significant factor in determining excitation energies than the specific form of the exchange-correlation functional.<span class="citation" data-cites="Peach2008"><sup>11</sup></span></p>
+<p>For studies focusing primarily on low-energy valence excitations, hybrid functionals like B3LYP may be sufficient and computationally efficient. However, for more comprehensive spectral predictions, especially involving higher-energy transitions or states with potential charge-transfer character, range-separated functionals like CAM-B3LYP or ωB97X-D appear to provide more balanced results that are generally in better agreement with the higher-level EOM-CCSD reference.<span class="citation" data-cites="Jacquemin2008"><sup>13</sup></span></p>
+<p>The use of the 6-311+G(d,p) basis set for TD-DFT calculations provides a reasonable balance between accuracy and computational cost. The diffuse functions (indicated by the + sign) are particularly important for accurately describing excited states, especially those with Rydberg character.<span class="citation" data-cites="Papajak2011"><sup>14</sup></span> The smaller cc-pVDZ basis used for EOM-CCSD reflects the higher computational demands of this method, though ideally, a larger basis would be preferred for quantitative predictions.</p>
+<h3 id="implications-for-photochemical-studies">Implications for Photochemical Studies</h3>
+<p>These results have important implications for computational studies of formaldehyde photochemistry. The accurate prediction of the n→π* transition energy and its forbidden nature across all methods confirms the reliability of computational approaches for studying the primary photochemical processes of formaldehyde, which are initiated by this transition.<span class="citation" data-cites="Heicklen1988"><sup>15</sup></span></p>
+<p>For studies involving higher-energy processes, such as interactions with UV radiation in the upper atmosphere, the choice of computational method becomes more critical.<span class="citation" data-cites="Gratien2007"><sup>1</sup></span> The significant differences in predicted excitation energies and intensities between different functionals suggest that careful benchmarking against experimental data or higher-level calculations is essential for reliable predictions.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Our computational study of formaldehyde’s excited states demonstrates both the capabilities and limitations of different quantum chemical methods for predicting electronic transitions. All functionals examined (B3LYP, CAM-B3LYP, PBE0, and ωB97X-D) correctly identify the lowest energy n→π* transition around 3.95-4.00 eV with negligible oscillator strength, in good agreement with the EOM-CCSD reference value of 4.15 eV.</p>
+<p>For higher energy excitations, we observe more pronounced differences between methods, with range-separated functionals generally predicting higher excitation energies than hybrid functionals. This behavior likely reflects the improved description of long-range interactions in range-separated functionals, which can be particularly important for excited states with partial charge-transfer or Rydberg character.<span class="citation" data-cites="Peach2008"><sup>11</sup></span></p>
+<p>The oscillator strengths also show notable variations across functionals, with ωB97X-D predicting the most intense transitions. These differences highlight the importance of method selection when calculating properties that depend on transition intensities, such as absorption spectra or photochemical reaction rates.<span class="citation" data-cites="Dierksen2004"><sup>16</sup></span></p>
+<p>Based on our results, we recommend using range-separated functionals like CAM-B3LYP or ωB97X-D for comprehensive studies of formaldehyde’s excited states, especially when higher-energy transitions are of interest. For studies focusing primarily on the lowest n→π* transition, simpler hybrid functionals like B3LYP may be sufficient and computationally more efficient.</p>
+<p>This study provides a foundation for future investigations of photochemical processes involving formaldehyde and similar carbonyl compounds. Further work could include more extensive benchmarking against experimental data, exploration of solvent effects on excitation energies, and investigation of potential energy surfaces for photochemical reactions.</p>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list">
+<div id="ref-Gratien2007" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Gratien, A.; Picquet-Varrault, B.; Orphal, J.; Doussin, J.-F. Kinetic Study of the Gas-Phase Reaction of Photolysis of Formaldehyde. <em>Journal of Physical Chemistry A</em> <strong>2007</strong>, <em>111</em> (45), 11506–11513. <a href="https://doi.org/10.1021/jp074139h">https://doi.org/10.1021/jp074139h</a>.</div>
+</div>
+<div id="ref-Laurent2013" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Laurent, A. D.; Jacquemin, D. TD-DFT Benchmarks: A Review. <em>International Journal of Quantum Chemistry</em> <strong>2013</strong>, <em>113</em> (17), 2019–2039. <a href="https://doi.org/10.1002/qua.24438">https://doi.org/10.1002/qua.24438</a>.</div>
+</div>
+<div id="ref-Jacquemin2009" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Jacquemin, D.; Perpete, E. A.; Scuseria, G. E.; Ciofini, I.; Adamo, C. Extensive TD-DFT Benchmark: Singlet-Excited States of Organic Molecules. <em>Journal of Chemical Theory and Computation</em> <strong>2009</strong>, <em>5</em> (9), 2420–2435. <a href="https://doi.org/10.1021/ct900298e">https://doi.org/10.1021/ct900298e</a>.</div>
+</div>
+<div id="ref-Dreuw2004" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Dreuw, A.; Head-Gordon, M. Failure of Time-Dependent Density Functional Theory for Long-Range Charge-Transfer Excited States: The Zincbacteriochlorin-Bacteriochlorin and Bacteriochlorophyll-Spheroidene Complexes. <em>Journal of the American Chemical Society</em> <strong>2004</strong>, <em>126</em> (12), 4007–4016. <a href="https://doi.org/10.1021/ja039556n">https://doi.org/10.1021/ja039556n</a>.</div>
+</div>
+<div id="ref-Krylov2008" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Krylov, A. I. Equation-of-Motion Coupled-Cluster Methods for Open-Shell and Electronically Excited Species: The Hitchhiker’s Guide to Fock Space. <em>Annual Review of Physical Chemistry</em> <strong>2008</strong>, <em>59</em>, 433–462. <a href="https://doi.org/10.1146/annurev.physchem.59.032607.093602">https://doi.org/10.1146/annurev.physchem.59.032607.093602</a>.</div>
+</div>
+<div id="ref-Atkinson2003" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Atkinson, R.; Arey, J. Atmospheric Chemistry of VOCs and NOx. <em>Atmospheric Environment</em> <strong>2003</strong>, <em>37</em>, 197–219. <a href="https://doi.org/10.1016/S1352-2310(03)00391-1">https://doi.org/10.1016/S1352-2310(03)00391-1</a>.</div>
+</div>
+<div id="ref-Schreier2007" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Schreier, C. G.; Ziemann, P. J.; Atkinson, R. Carbonyl Compounds in Boreal Forest Air in Hyytiälä, Southern Finland. <em>Atmospheric Environment</em> <strong>2007</strong>, <em>41</em> (7), 1352–1369. <a href="https://doi.org/10.1016/j.atmosenv.2006.10.006">https://doi.org/10.1016/j.atmosenv.2006.10.006</a>.</div>
+</div>
+<div id="ref-Clouthier1983" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Clouthier, D. J.; Ramsay, D. A. The Electronic Spectrum of Formaldehyde. <em>Annual Review of Physical Chemistry</em> <strong>1983</strong>, <em>34</em>, 31–58. <a href="https://doi.org/10.1146/annurev.pc.34.100183.000335">https://doi.org/10.1146/annurev.pc.34.100183.000335</a>.</div>
+</div>
+<div id="ref-Sinha2019" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">Sinha, D.; Mukhopadhyay, S.; Mukherjee, D.; Chowdhury, R. Benchmarking Coupled Cluster Methods for Singlet Excited States of Organic Molecules. <em>The Journal of Chemical Physics</em> <strong>2019</strong>, <em>151</em> (13), 134113. <a href="https://doi.org/10.1063/1.5116179">https://doi.org/10.1063/1.5116179</a>.</div>
+</div>
+<div id="ref-Brand1995" class="csl-entry" role="listitem">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">Brand, J. C. D.; Williamson, D. G. A Two-Photon/Laser-Induced Fluorescence Study of the s<span class="math inline">\(_0\)</span> to s<span class="math inline">\(_1\)</span> System of Formaldehyde. <em>Chemical Physics</em> <strong>1995</strong>, <em>192</em> (3), 57–67. <a href="https://doi.org/10.1016/0301-0104(94)00408-E">https://doi.org/10.1016/0301-0104(94)00408-E</a>.</div>
+</div>
+<div id="ref-Peach2008" class="csl-entry" role="listitem">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">Peach, M. J. G.; Benfield, P.; Helgaker, T.; Tozer, D. J. Excitation Energies in Density Functional Theory: An Evaluation and a Diagnostic Test. <em>The Journal of Chemical Physics</em> <strong>2008</strong>, <em>128</em> (4), 044118. <a href="https://doi.org/10.1063/1.2831900">https://doi.org/10.1063/1.2831900</a>.</div>
+</div>
+<div id="ref-Isegawa2012" class="csl-entry" role="listitem">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline">Isegawa, M.; Peverati, R.; Truhlar, D. G. Assessment of Range-Separated Time-Dependent Density-Functional Theory for Electronic Excitation Energies of Biologically Relevant Chromophores. <em>The Journal of Chemical Physics</em> <strong>2012</strong>, <em>137</em> (24), 244104. <a href="https://doi.org/10.1063/1.4769078">https://doi.org/10.1063/1.4769078</a>.</div>
+</div>
+<div id="ref-Jacquemin2008" class="csl-entry" role="listitem">
+<div class="csl-left-margin">13. </div><div class="csl-right-inline">Jacquemin, D.; Wathelet, V.; Perpète, E. A.; Adamo, C. TD-DFT Performance for the Visible Absorption Spectra of Organic Dyes: Conventional Versus Long-Range Hybrids. <em>Journal of Chemical Theory and Computation</em> <strong>2008</strong>, <em>5</em> (9), 2420–2435. <a href="https://doi.org/10.1021/ct800298n">https://doi.org/10.1021/ct800298n</a>.</div>
+</div>
+<div id="ref-Papajak2011" class="csl-entry" role="listitem">
+<div class="csl-left-margin">14. </div><div class="csl-right-inline">Papajak, E.; Truhlar, D. G. Perspectives on Basis Sets Beautiful: Seasonal Plantings of Diffuse Basis Functions. <em>Journal of Chemical Theory and Computation</em> <strong>2011</strong>, <em>7</em> (1), 10–18. <a href="https://doi.org/10.1021/ct1005533">https://doi.org/10.1021/ct1005533</a>.</div>
+</div>
+<div id="ref-Heicklen1988" class="csl-entry" role="listitem">
+<div class="csl-left-margin">15. </div><div class="csl-right-inline">Heicklen, J.; Desai, J.; Bahta, A.; Harper, C.; Simonaitis, R. The Atmospheric Photolysis of Formaldehyde. <em>The Journal of Photochemistry and Photobiology A: Chemistry</em> <strong>1988</strong>, <em>44</em> (3), 265–273. <a href="https://doi.org/10.1016/1010-6030(88)80098-5">https://doi.org/10.1016/1010-6030(88)80098-5</a>.</div>
+</div>
+<div id="ref-Dierksen2004" class="csl-entry" role="listitem">
+<div class="csl-left-margin">16. </div><div class="csl-right-inline">Dierksen, M.; Grimme, S. Calculation of Electronic Excitation Energies of Molecules in Solution: The State-Specific Polarizable Continuum Model Approach. <em>The Journal of Physical Chemistry A</em> <strong>2004</strong>, <em>108</em> (46), 10225–10237. <a href="https://doi.org/10.1021/jp047289h">https://doi.org/10.1021/jp047289h</a>.</div>
+</div>
+</div>
+    </section>
+</article>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div>
+                    Site proudly generated by
+                    <a href="http://jaspervdj.be/hakyll">Hakyll</a>
+                </div>
+                
+                <button class="print-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                        <rect x="6" y="14" width="12" height="8"></rect>
+                    </svg>
+                    Print Article
+                </button>
+                
+                <div>
+                    © 2025
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
