@@ -1,5 +1,5 @@
 ---
-title: Building a Serverless CORS Proxy with Vercel: Simplifying Cross-Origin Requests
+title: Building a Serverless CORS Proxy with Vercel - Simplifying Cross-Origin Requests
 date: 2025-05-04
 tags: cors proxy, serverless, vercel, javascript, web development
 description: A practical exploration of building a serverless CORS proxy using Vercel's serverless functions, offering an elegant solution to the common cross-origin resource sharing challenges faced by frontend developers.
