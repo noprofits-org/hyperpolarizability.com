@@ -1,5 +1,5 @@
 ---
-title: Quantum Tunneling Workflow for Hydrogen Peroxide: PES Scans, kappa Corrections, and Instanton Integration
+title: Quantum Tunneling Workflow for Hydrogen Peroxide - PES Scans, kappa Corrections, and Instanton Integration
 date: 2026-01-16
 tags: quantum chemistry, tunneling, kinetics, instanton, workflow, improved_tunnel
 description: An ACS-style, AI-authored workflow note that couples a relaxed PES scan with semiclassical tunneling corrections and an i-PI ring-polymer instanton sketch, including charts, tables, and runnable code.
